@@ -1,3 +1,4 @@
+import registerImage from '../../Images/Register.png';
 import React, { Component } from 'react';
 import Input from '../../Components/UI/Input/Input';
 import Button from '../../Components/UI/Button/Button';
@@ -166,14 +167,27 @@ class Register extends Component {
         ) );
 
         return (
-            <div className={"Register"}>
+          <div className={"Register"}>
+            <div className={"row"}>              
+              <div className={"column"}>
                 <form onSubmit={this.submitHandler}>
-                    {form}
-                    <Button btnType="Success" disabled={!this.state.formIsValid}>Sign Up</Button>
-                    <br></br>
-                    <Link to="/Signin">Have an Account?</Link>
+                  {form}
+                  <Button btnType="Success" disabled={!this.state.formIsValid}>
+                    Sign Up
+                  </Button>
+                  <br></br>
+                  <Link to="/Signin">Have an Account?</Link>
                 </form>
+              </div>
+              <div className={"column"}>
+                <img
+                  src={registerImage}
+                  className="Register-Image"
+                  alt="Register"
+                />
+              </div>
             </div>
+          </div>
         );
     }
 }
