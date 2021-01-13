@@ -1,4 +1,3 @@
-import logo from './Images/Logo.png';
 import './App.css';
 import Aux from './hoc/Auxiliary';
 import Auth from './Containers/Auth/Auth';
@@ -10,8 +9,7 @@ import React, { Component } from 'react';
 class App extends Component {
   render() {
     return (
-    <Aux className={"Centralize"}> 
-    <img src={logo} className="App-logo" alt="Logo"/>   
+    <Aux >       
     <Switch>
     <Route path="/SignIn" component={Auth}/>
     <Route path="/Register" component={Register}/>

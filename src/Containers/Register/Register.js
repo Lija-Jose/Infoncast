@@ -1,4 +1,5 @@
 import registerImage from '../../Images/Register.png';
+import logo from '../../Images/Logo.png';
 import React, { Component } from 'react';
 import Input from '../../Components/UI/Input/Input';
 import Button from '../../Components/UI/Button/Button';
@@ -9,13 +10,28 @@ import {Link} from 'react-router-dom';
 class Register extends Component {
     state = {
         controls: {
+            fullName: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: ''
+                },
+                value: '',
+                label: 'Full Name',
+                validation: {
+                    required: true
+                },
+                valid: false,
+                touched: false
+            },
             userName: {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
-                    placeholder: 'User Name'
+                    placeholder: ''
                 },
                 value: '',
+                label: 'User Name',
                 validation: {
                     required: true
                 },
@@ -26,9 +42,10 @@ class Register extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'email',
-                    placeholder: 'Email'
+                    placeholder: ''
                 },
                 value: '',
+                label: 'Email Address',
                 validation: {
                     required: true,
                     isEmail: true
@@ -40,9 +57,10 @@ class Register extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'password',
-                    placeholder: 'Password'
+                    placeholder: '6+ characters'
                 },
                 value: '',
+                label:'Password',
                 validation: {
                     required: true,
                     minLength: 6
@@ -54,9 +72,10 @@ class Register extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'password',
-                    placeholder: 'Re - Password'
+                    placeholder: ''
                 },
                 value: '',
+                label:'Confirm Password',
                 validation: {
                     required: true,
                     minLength: 6
@@ -71,7 +90,7 @@ class Register extends Component {
                     placeholder: ''
                 },
                 value: '',
-                label: 'Agreement',
+                label: 'Privacy & Policy',
                 checkmark:'checkmark',
                 validation: {
                     checked: true
@@ -151,6 +170,8 @@ class Register extends Component {
                 config: this.state.controls[key]
             } );
         }
+        
+        
 
         const form = formElementsArray.map( formElement => (
             <Input
@@ -170,13 +191,19 @@ class Register extends Component {
           <div className={"Register"}>
             <div className={"row"}>              
               <div className={"column"}>
+              <img src={logo} className="App-logo" alt="Logo"/>
+              <br/>
+              <label className={"SignUpMessage"}>Sign up to Infoncast</label>
                 <form onSubmit={this.submitHandler}>
                   {form}
+                  <div className={"Centralize"}>
                   <Button btnType="Success" disabled={!this.state.formIsValid}>
-                    Sign Up
+                    Create Account
                   </Button>
+                  
                   <br></br>
-                  <Link to="/Signin">Have an Account?</Link>
+                  <label className={"PrivacyMessage"}>Already a member?</label><Link to="/Signin">Sign in</Link>
+                  </div>
                 </form>
               </div>
               <div className={"column"}>

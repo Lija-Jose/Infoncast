@@ -4,13 +4,19 @@
     box-sizing: border-box;
 }
 
+.Input .Label{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
 
 .InputElement {
     outline: none;
-    border: none;
-    border-bottom: 1px solid #000000;
-    text-align: center;
-    background-color: white;
+    border:none;
+    background-color:#F2F2F2;
     font: inherit;
     padding: 6px 10px;
     display: block;
