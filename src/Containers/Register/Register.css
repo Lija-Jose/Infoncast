@@ -18,12 +18,12 @@
     width: auto;
 }
 
-.Input:nth-child(6) .InputElement[type=checkbox] {
+.Input:nth-child(5) .InputElement[type=checkbox] {
     visibility: hidden;
     width:0px;
     height:0px;
 }
-.Input:nth-child(6) .Label {
+.Input:nth-child(5) .Label {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -111,8 +111,8 @@ div .row {
   clear: both;
 }
 
-.Register img{
-  max-width: 50vw;
+.Register-Image{
+  width:100%;
   max-height: 97vh;
 }
 
@@ -142,4 +142,8 @@ div .row {
 
 .Centralize{
   text-align:center;
+}
+
+.Register a{
+  color:red;
 }
