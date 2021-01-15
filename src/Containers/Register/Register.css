@@ -147,3 +147,23 @@ div .row {
 .Register a{
   color:red;
 }
+
+.container{
+  display: flex;
+  align-items: center;
+}
+
+.border{
+  border-bottom: 0.903101px solid #E5E5E5;
+  width: 100%;
+}
+
+.content {
+  padding: 0 10px 0 10px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21.6744px;
+  line-height: 26px;
+  color: #A3A3A3;
+}

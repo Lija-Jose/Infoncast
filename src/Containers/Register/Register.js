@@ -171,7 +171,17 @@ class Register extends Component {
             } );
         }
         
-        
+        const Divider = ({ children }) => {
+            return (
+              <div className="container">
+                <div className="border" />
+                <span className="content">
+                  {children}
+                </span>
+                <div className="border" />
+              </div>
+            );
+          };
 
         const form = formElementsArray.map( formElement => (
             <Input
@@ -189,20 +199,27 @@ class Register extends Component {
 
         return (
           <div className={"Register"}>
-            <div className={"row"}>              
+            <div className={"row"}>
               <div className={"column"}>
-              <img src={logo} className="App-logo" alt="Logo"/>
-              <br/>
-              <label className={"SignUpMessage"}>Sign up to Infoncast</label>
+                <img src={logo} className="App-logo" alt="Logo" />
+                <br />
+                <label className={"SignUpMessage"}>Sign up to Infoncast</label>
+                <Divider>OR</Divider>
                 <form onSubmit={this.submitHandler}>
                   {form}
                   <div className={"Centralize"}>
-                  <Button btnType="Success" disabled={!this.state.formIsValid}>
-                    Create Account
-                  </Button>
-                  
-                  <br></br>
-                  <label className={"PrivacyMessage"}>Already a member?</label><Link to="/Signin">Sign in</Link>
+                    <Button
+                      btnType="Success"
+                      disabled={!this.state.formIsValid}
+                    >
+                      Create Account
+                    </Button>
+
+                    <br></br>
+                    <label className={"PrivacyMessage"}>
+                      Already a member?
+                    </label>
+                    <Link to="/Signin">Sign in</Link>
                   </div>
                 </form>
               </div>
