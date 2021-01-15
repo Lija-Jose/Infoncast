@@ -3,12 +3,12 @@
     box-shadow: 0 2px 3px #ccc;
     border: 1px solid #eee;
     padding: 10px;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
 @media (min-width: 600px) {
     .Register {
-        width: 200px;
+      width:100%;
     }
 }
 
@@ -26,7 +26,8 @@
 .Input:nth-child(5) .Label {
     display: block;
     position: relative;
-    padding-left: 0px;
+    padding-left: 35px;
+    text-align:left;
     margin-bottom: 0px;
     cursor: pointer;
     font-size: 15px;
@@ -34,6 +35,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    color: #A3A3A3;
   }
   
   /* Hide the browser's default checkbox */
@@ -90,3 +92,78 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
+
+  /*-----------------------------------------*/
+  /* Create two equal columns that floats next to each other */
+div .column {
+  float: left;
+  width: 50%;
+  text-align:left;
+  padding: 10px;
+  height: auto; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+div .row {
+  content: "";
+  display: flex !important;
+  clear: both;
+}
+
+.Register-Image{
+  width:100%;
+  max-height: 97vh;
+}
+
+.App-logo {
+  width: 149px;
+  height: 59px;
+}
+
+.SignUpMessage{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #313131;
+  padding-left: 10px;
+}
+
+.PrivacyMessage{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #A3A3A3;
+}
+
+.Centralize{
+  text-align:center;
+}
+
+.Register a{
+  color:red;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+}
+
+.border{
+  border-bottom: 0.903101px solid #E5E5E5;
+  width: 100%;
+}
+
+.content {
+  padding: 0 10px 0 10px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21.6744px;
+  line-height: 26px;
+  color: #A3A3A3;
+}
