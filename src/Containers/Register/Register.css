@@ -167,3 +167,12 @@ div .row {
   line-height: 26px;
   color: #A3A3A3;
 }
+
+.SocialMedia{
+  background-color: #5C5655;
+  color:#F2F2F2;
+  width:20px !important;
+  height:20px !important;
+  cursor:pointer;
+  margin:20px;
+}
