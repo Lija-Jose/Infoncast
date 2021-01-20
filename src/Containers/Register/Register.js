@@ -5,7 +5,11 @@ import Input from '../../Components/UI/Input/Input';
 import Button from '../../Components/UI/Button/Button';
 import './Register.css';
 import {Link} from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
+library.add(fab); 
 
 class Register extends Component {
     state = {
@@ -204,6 +208,12 @@ class Register extends Component {
                 <img src={logo} className="App-logo" alt="Logo" />
                 <br />
                 <label className={"SignUpMessage"}>Sign up to Infoncast</label>
+                <br/>
+                <div>
+                <FontAwesomeIcon icon={['fab', 'facebook-f']} className={"SocialMedia"}/>
+                <FontAwesomeIcon icon={['fab', 'google']} className={"SocialMedia"}/>
+                <FontAwesomeIcon icon={['fab', 'twitter']} className={"SocialMedia"}/>
+                </div>
                 <Divider>OR</Divider>
                 <form onSubmit={this.submitHandler}>
                   {form}
