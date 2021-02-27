@@ -214,7 +214,7 @@ class Register extends Component {
                 <FontAwesomeIcon icon={['fab', 'google']} className={"SocialMedia"}/>
                 <FontAwesomeIcon icon={['fab', 'twitter']} className={"SocialMedia"}/>
                 </div>
-                <Divider>OR</Divider>
+                <Divider>Or</Divider>
                 <form onSubmit={this.submitHandler}>
                   {form}
                   <div className={"Centralize"}>

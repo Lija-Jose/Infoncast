@@ -4,7 +4,13 @@ import Button from '../../Components/UI/Button/Button';
 import './Auth.css';
 import {Link} from 'react-router-dom';
 
+import registerImage from '../../Images/Register.png';
+import logo from '../../Images/Logo.png';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
+library.add(fab); 
 class Auth extends Component {
 
     // state={
@@ -18,9 +24,10 @@ class Auth extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'email',
-                    placeholder: 'Email'
+                    placeholder: ''
                 },
                 value: '',
+                label: 'Email Address',
                 validation: {
                     required: true,
                     isEmail: true
@@ -32,9 +39,10 @@ class Auth extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'password',
-                    placeholder: 'Password'
+                    placeholder: ''
                 },
                 value: '',
+                label: 'Password',
                 validation: {
                     required: true,
                     minLength: 6
@@ -96,19 +104,19 @@ class Auth extends Component {
 
     submitHandler = (event) => {
         event.preventDefault();
-        // fetch('https://reqres.in/api/login', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-type': 'application/json',
-        //     },
-        //      body: JSON.stringify({
-        //         email: "eve.holt@reqres.in",
-        //         password: "cityslicka"
-        //     })
-        // }) /*end fetch */
-        // .then(results => results.json())
-        // .then((data) => {console.log(data);})
-
+        /* fetch('https://reqres.in/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+             body: JSON.stringify({
+                email: "eve.holt@reqres.in",
+                password: "cityslicka"
+            })
+        }) //end fetch 
+        .then(results => results.json())
+        .then((data) => {console.log(data);})
+        */
         
     }
 
@@ -121,6 +129,18 @@ class Auth extends Component {
             } );
         }
 
+        const Divider = ({ children }) => {
+            return (
+              <div className="container">
+                <div className="border" />
+                <span className="content">
+                  {children}
+                </span>
+                <div className="border" />
+              </div>
+            );
+          };
+
         const form = formElementsArray.map( formElement => (
             <Input
                 key={formElement.id}
@@ -128,20 +148,53 @@ class Auth extends Component {
                 elementConfig={formElement.config.elementConfig}
                 value={formElement.config.value}
                 invalid={!formElement.config.valid}
+                label={formElement.config.label}
                 shouldValidate={formElement.config.validation}
                 touched={formElement.config.touched}
                 changed={( event ) => this.inputChangedHandler( event, formElement.id )} />
         ) );
 
         return (
-            <div className={"Auth"}>
+            <div className={"Register"}>
+            <div className={"row"}>
+              <div className={"column"}>
+                <img src={logo} className="App-logo" alt="Logo" />
+                <br />
+                <label className={"SignUpMessage"}>Login to Infoncast</label>
+                <br/>
+                <div>
+                <FontAwesomeIcon icon={['fab', 'facebook-f']} className={"SocialMedia"}/>
+                <FontAwesomeIcon icon={['fab', 'google']} className={"SocialMedia"}/>
+                <FontAwesomeIcon icon={['fab', 'twitter']} className={"SocialMedia"}/>
+                </div>
+                <Divider>Or</Divider>
                 <form onSubmit={this.submitHandler}>
-                    {form}
-                    <Button btnType="Success" disabled={!this.state.formIsValid}>Sign In</Button>
-                    <br/>
-                    <Link to="/Register">Sign Up</Link>
+                  {form}
+                  <div className={"Centralize"}>
+                    <Button
+                      btnType="Success"
+                      disabled={!this.state.formIsValid}
+                    >
+                      Login
+                    </Button>
+
+                    <br></br>
+                    <label className={"PrivacyMessage"}>
+                      Don't have an account?
+                    </label>
+                    <Link to="/Register">Sign up</Link>
+                  </div>
                 </form>
+              </div>
+              <div className={"column"}>
+                <img
+                  src={registerImage}
+                  className="Register-Image"
+                  alt="Register"
+                />
+              </div>
             </div>
+          </div>
         );
     }
 }
